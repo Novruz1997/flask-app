@@ -40,7 +40,7 @@ api.add_resource(ItemList, '/items')
 api.add_resource(UserRegister, '/register')
 api.add_resource(StoreList, '/stores')
 
-if __name__ == '__main__':
-    from db import db
-    db.init_app(app)
-    app.run(host='0.0.0.0', port=8000, debug=True)
+# if __name__ == '__main__':
+#     from db import db
+#     db.init_app(app)
+#     app.run(host='0.0.0.0', port=8000, debug=True)
