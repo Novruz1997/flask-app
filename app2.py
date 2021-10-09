@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT
@@ -10,7 +12,8 @@ from resources.store import Store, StoreList  # SQLAlchemy need to see them to c
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'  # database will live at the root folder of our project
+# keep sqlite too if we want to test app locally if database url is not defined
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Only False extension behavior not original SQLAlchemy behaviour
 app.secret_key = "jose"
