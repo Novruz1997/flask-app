@@ -35,7 +35,7 @@ api = Api(app)
 jwt = JWT(app, authenticate, identity)  # /auth
 
 api.add_resource(Store, '/store/<string:name>')
-api.add_resource(ItemList, '/item/<string:name>')  # http://127.0.0.1:5000/student/Rolf
+api.add_resource(Item, '/item/<string:name>')  # http://127.0.0.1:5000/student/Rolf
 api.add_resource(ItemList, '/items')
 api.add_resource(UserRegister, '/register')
 api.add_resource(StoreList, '/stores')
